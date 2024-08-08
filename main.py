@@ -4,8 +4,7 @@ import requests
 
 
 #API KEY
-Api_Key = '373ac139ad20b1a4b0180edd7653578e'
-
+Api_Key = open('API_KEY', 'r').read() #Get your own API key from OpenWeather website
 
 #FUNCTION TO CONVERT KELVIN
 def kelvin_converter(kelvin):
@@ -65,9 +64,8 @@ wind_speed = openweather_response['wind']['speed']
 wind_dir_ang = openweather_response['wind']['deg']
 wind_gen_dir = deg_to_dir(wind_dir_ang)
 description = openweather_response['weather'][0]['description']
-dawn = dt.datetime.utcfromtimestamp(openweather_response['sys']['sunrise'] + openweather_response['timezone'])
-dusk = dt.datetime.utcfromtimestamp(openweather_response['sys']['sunset'] + openweather_response['timezone'])
-
+dawn = dt.datetime.fromtimestamp(openweather_response['sys']['sunrise'] + openweather_response['timezone'], dt.timezone.utc)
+dusk = dt.datetime.fromtimestamp(openweather_response['sys']['sunset'] + openweather_response['timezone'], dt.timezone.utc)
 
 #SCREEN OUTPUT
 print(f"The General Weather in {location}: {description}")
