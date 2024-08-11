@@ -24,6 +24,7 @@ weather data on.
 
 ![guiweather1](https://github.com/user-attachments/assets/43a9c614-8809-410d-9b73-4161876f90a3)
 ![guiweather2](https://github.com/user-attachments/assets/c3a40d1c-34d3-442d-8f16-6e9ed792e93c)
+![image](https://github.com/user-attachments/assets/b688d575-97e1-4fd8-aaa4-8993d4d7c149)
 
 
 
