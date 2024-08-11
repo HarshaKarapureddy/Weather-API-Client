@@ -1,6 +1,5 @@
 #Importing required modules
 import datetime as dt
-from requests.exceptions import Timeout, HTTPError
 import requests
 from customtkinter import *
 
