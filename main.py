@@ -1,6 +1,7 @@
 #IMPORTING DATETIME AND REQUESTS MODULES
 import datetime as dt
 import requests
+import argparse
 
 #FUNCTION TO CONVERT KELVIN
 def kelvin_converter(kelvin):
@@ -34,25 +35,20 @@ def deg_to_dir(deg):
 
     return direction
 
-def run():
+def run(api_key=None, location='Nashville'):
     #API KEY
-    api_key = open('API_KEY', 'r').read() #Get your own API key from OpenWeather website
-
-    #CHOSEN LOCATION
-    location = 'Nashville'
-
+    if api_key is None:
+        api_key = open('API_KEY', 'r').read() #Get your own API key from OpenWeather website
 
     #API CALL FOR GEOCODING API
     location_url = 'http://api.openweathermap.org/geo/1.0/direct?'
     url = location_url + "appid=" + api_key + "&q=" + location + '&limit='
     geocoding_response = requests.get(url).json()
 
-
     #API CALL FOR OPENWEATHER API
     base_url = 'https://api.openweathermap.org/data/2.5/weather?'
     url2 = base_url + "appid=" + api_key + "&lat=" + str(geocoding_response[0]['lat']) + '&lon=' + str(geocoding_response[0]['lon'])
     openweather_response = requests.get(url2).json()
-
 
     #DESIRED DATA PULLED FROM API RESPONSE
     kelvin_Temp = openweather_response['main']['temp']
@@ -74,4 +70,9 @@ def run():
     print(f"The sun in {location} sets at {dusk} (local time)")
 
 if __name__ == "__main__":
-    run()
+    parser = argparse.ArgumentParser(description="Use the WeatherAPI.")
+    parser.add_argument("--token", type=str, required=True, help="Token for authentication")
+    parser.add_argument("--location", type=str, required=True, help="The name of a location, such as a city")
+
+    args = parser.parse_args()
+    run(api_key=args.token)
