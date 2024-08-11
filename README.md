@@ -8,7 +8,7 @@ The name can be changed within the Python Script (There will be an updated versi
 
 #Instructions and Use
  1. Visit [OpenWeatherMap](openweathermap.org) to sign up for an API key.
- 2. Pass the API key along with your desired location via args for example;
+ 2. Pass the API key along with your desired location via args for example:
  ``` bash
  python3 main.py --token 179a42c0b5426f80b65709467d2e15d0 --location Rockville
  ```
