@@ -1,3 +1,7 @@
+#Latest Update v2
+The API now includes a GUI, making it more user-friendly, as well as catching any exception raised when the user enters a
+non-existing city. Go to the updated branch for new Instructions and screenshots.
+
 # WeatherAPI
 A quick API pull that uses a city name as input to give weather data as output. 
 The name can be changed within the Python Script (There will be an updated version with GUI, that would be more user-friendly).
