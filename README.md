@@ -1,4 +1,4 @@
-# WeatherAPI
+# Weather API Client
 A quick API pull that uses a city name as input to give weather data as output. 
 The Script puts forward a GUI in which the user is able to enter and submit a city to get
 weather data on. 
