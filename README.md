@@ -7,9 +7,11 @@ A quick API pull that uses a city name as input to give weather data as output.
 The name can be changed within the Python Script (There will be an updated version with GUI, that would be more user-friendly).
 
 #Instructions and Use
-1) Place the wanted city name within the 'location' variable. Example: 'New York' or 'Hyderabad'
-2) Place an API_KEY file within the .py file directory which contains your API key from OpenWeather.
-3) Run Script
+ 1. Visit [OpenWeatherMap](openweathermap.org) to sign up for an API key.
+ 2. Pass the API key along with your desired location via args for example:
+ ``` bash
+ python3 main.py --token 179a42c0b5426f80b65709467d2e15d0 --location Rockville
+ ```
 
 #Contributions
 1) Fork the repository
